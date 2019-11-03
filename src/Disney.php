@@ -50,8 +50,7 @@ class Disney
     public function getActorStatistics()
     {
         $result = array();
-        //To do:
-        // Implement functionality as specified
+        $list = $this->xpath->query("");
 
         return $result;
     }
@@ -80,8 +79,9 @@ class Disney
     public function addRole($subsidiaryId, $movieName, $movieYear, $roleName,
                             $roleActor, $roleAlias = null)
     {
-        //To do:
-        // Implement functionality as specified
+        $subid = $this->doc->createElemnt('id');
+        $subidEl = $this->xpath->query('Subsidieries')[0];
+        $subidEl->
 
     }
 }
