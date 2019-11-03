@@ -52,7 +52,10 @@ class Disney
         $result = array();
         //To do:
         // Implement functionality as specified
-
+        $actors = $this->xpath->query("//Disney/Actors/Actor/Name");
+        foreach ($actors as $actor) {
+          array_push($result, $actor);
+        }
         return $result;
     }
 
