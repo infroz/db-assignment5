@@ -65,7 +65,14 @@ class Disney
     {
         //To do:
         // Implement functionality as specified
+        $list = $this->xpath->query("//Disney/Actors/Actor[not(@id=//Disney/Subsidiaries/Subsidiary/Movie/Cast/Role/@actor)]");
 
+        codecept_debug($list[0]);
+
+        // Removes each element
+        foreach ($list as $element) {
+          $element->parentNode->removeChild($element);
+        }
     }
 
     /**
