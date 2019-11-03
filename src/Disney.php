@@ -50,8 +50,12 @@ class Disney
     public function getActorStatistics()
     {
         $result = array();
-        $list = $this->xpath->query("");
-
+        //To do:
+        // Implement functionality as specified
+        $actors = $this->xpath->query("//Disney/Actors/Actor/Name");
+        foreach ($actors as $actor) {
+          array_push($result, $actor);
+        }
         return $result;
     }
 
@@ -64,7 +68,14 @@ class Disney
     {
         //To do:
         // Implement functionality as specified
+        $list = $this->xpath->query("//Disney/Actors/Actor[not(@id=//Disney/Subsidiaries/Subsidiary/Movie/Cast/Role/@actor)]");
 
+        codecept_debug($list[0]);
+
+        // Removes each element
+        foreach ($list as $element) {
+          $element->parentNode->removeChild($element);
+        }
     }
 
     /**
