@@ -1,5 +1,6 @@
 composer.*
-*.yml
-vendor/*
+.yml
+vendor/
 tests/*
 !tests/unit
+!tests/acceptance
